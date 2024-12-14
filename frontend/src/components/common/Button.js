@@ -1,11 +1,17 @@
-// src/components/common/Button.js
 import React from 'react';
 import './Button.css';
 
-const Button = ({ onClick, children }) => (
-  <button className="btn" onClick={onClick}>
-    {children}
-  </button>
-);
+const Button = ({ children, onClick, variant = 'primary', disabled = false }) => {
+  return (
+    <button
+      className={`button ${variant} ${disabled ? 'disabled' : ''}`}
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {children}
+    </button>
+  );
+};
 
 export default Button;
+

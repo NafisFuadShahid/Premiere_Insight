@@ -1,125 +1,46 @@
-/* Player List Container */
 .player-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-  padding: 0 10px;
-  max-height: 80vh;
-  overflow-y: auto;
-  transition: all 0.3s ease;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Player Card */
-.player-card {
-  background-color: #fff;
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 15px 0;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.player-list h2 {
+  color: #64ffda; /* Bright teal color */
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
-/* Hover Effect on Player Card */
-.player-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+.list-container {
+  display: grid;
+  gap: 1rem;
+  animation: fadeIn 0.3s ease-out;
 }
 
-/* Player Image */
-.player-card img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #8892b0; /* Light blue-gray */
+  font-size: 1.1rem;
 }
 
-/* Player Name */
-.player-card .player-name {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 8px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-/* Player Position and Team */
-.player-card .player-pos,
-.player-card .player-team {
-  font-size: 14px;
-  color: #777;
-  margin-bottom: 5px;
+.no-results {
+  text-align: center;
+  padding: 2rem;
+  color: #8892b0; /* Light blue-gray */
+  font-size: 1.1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Player Stats */
-.player-card .stats {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 10px;
-}
-
-/* Popup Modal */
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  max-width: 600px;
-  width: 80%;
-  z-index: 1000;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.popup.active {
-  opacity: 1;
-}
-
-/* Close Button */
-.popup .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #ff5733;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.popup .close-btn:hover {
-  background-color: #e04f28;
-}
-
-/* Dim Background */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 500;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.overlay.active {
-  opacity: 1;
-  pointer-events: all;
-}

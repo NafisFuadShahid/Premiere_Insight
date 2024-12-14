@@ -1,32 +1,16 @@
 import React, { useState } from 'react';
-import { addPlayer, updatePlayer } from '../api';
+import Button from './common/Button';
+import './PlayerForm.css';
 
-const PlayerForm = ({ playerToEdit }) => {
+const PlayerForm = ({ onSubmit, initialData = {} }) => {
   const [player, setPlayer] = useState({
     name: '',
     nation: '',
     pos: '',
     age: '',
     team: '',
-    // add other fields from Player
+    ...initialData
   });
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (playerToEdit) {
-      await updatePlayer(player);
-    } else {
-      await addPlayer(player);
-    }
-    setPlayer({
-      name: '',
-      nation: '',
-      pos: '',
-      age: '',
-      team: '',
-    });
-  };
 
   const handleChange = (e) => {
     setPlayer({
@@ -35,22 +19,72 @@ const PlayerForm = ({ playerToEdit }) => {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(player);
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>{playerToEdit ? 'Edit Player' : 'Add Player'}</h2>
-      <label>Name:</label>
-      <input type="text" name="name" value={player.name} onChange={handleChange} />
-      <label>Nation:</label>
-      <input type="text" name="nation" value={player.nation} onChange={handleChange} />
-      <label>Position:</label>
-      <input type="text" name="pos" value={player.pos} onChange={handleChange} />
-      <label>Age:</label>
-      <input type="number" name="age" value={player.age} onChange={handleChange} />
-      <label>Team:</label>
-      <input type="text" name="team" value={player.team} onChange={handleChange} />
-      <button type="submit">{playerToEdit ? 'Update' : 'Add'} Player</button>
+    <form onSubmit={handleSubmit} className="player-form">
+      <div className="form-group">
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={player.name}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="nation">Nation:</label>
+        <input
+          type="text"
+          id="nation"
+          name="nation"
+          value={player.nation}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="pos">Position:</label>
+        <input
+          type="text"
+          id="pos"
+          name="pos"
+          value={player.pos}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="age">Age:</label>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          value={player.age}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="team">Team:</label>
+        <input
+          type="text"
+          id="team"
+          name="team"
+          value={player.team}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <Button type="submit">Submit</Button>
     </form>
   );
 };
 
 export default PlayerForm;
+

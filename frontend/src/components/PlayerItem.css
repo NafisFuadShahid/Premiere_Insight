@@ -1,0 +1,43 @@
+.player-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.player-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.player-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e6f1ff; /* Light blue-white */
+  margin: 0;
+}
+
+.player-info .team {
+  color: #8892b0; /* Light blue-gray */
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+.player-info .stats {
+  display: flex;
+  gap: 0.5rem;
+  color: #64ffda; /* Bright teal color */
+  font-size: 0.9rem;
+}
+
+.player-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+

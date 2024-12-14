@@ -1,34 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background-color: #f4f4f9;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  text-align: center;
-  color: #333;
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0a192f; /* Dark navy blue */
+  color: #e6f1ff; /* Light blue-white for better readability */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 button {
-  background-color: #ff5c5c;
-  border: none;
-  color: white;
-  padding: 8px 16px;
-  cursor: pointer;
-  border-radius: 4px;
+  font-family: inherit;
 }
 
-button:hover {
-  background-color: #e04e4e;
+:root {
+  --primary-color: #64ffda;
+  --primary-hover: #45e6c0;
+  --danger-color: #ff6b6b;
+  --danger-hover: #ff5252;
 }
 
-input {
-  padding: 8px;
-  font-size: 16px;
-  width: 250px;
-  margin-bottom: 20px;
-}
