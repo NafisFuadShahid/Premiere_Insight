@@ -1,0 +1,19 @@
+.search-by-team-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.search-by-team-page h2 {
+  text-align: center;
+  color: #64ffda;
+  margin-bottom: 2rem;
+}
+
+.loading, .no-results {
+  text-align: center;
+  color: #e6f1ff;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+

@@ -12,12 +12,32 @@ export const getPlayers = async () => {
   }
 };
 
-export const getPlayerByName = async (name) => {
+export const getPlayersFromTeam = async (team) => {
   try {
-    const response = await axios.get(`${API_URL}?name=${name}`);
+    const response = await axios.get(`${API_URL}?team=${team}`);
     return response.data;
   } catch (error) {
-    console.error('Error fetching player:', error);
+    console.error('Error fetching players by team:', error);
+    throw error;
+  }
+};
+
+export const getPlayersByNation = async (nation) => {
+  try {
+    const response = await axios.get(`${API_URL}?nation=${nation}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching players by nation:', error);
+    throw error;
+  }
+};
+
+export const getPlayersByPos = async (position) => {
+  try {
+    const response = await axios.get(`${API_URL}?position=${position}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching players by position:', error);
     throw error;
   }
 };
