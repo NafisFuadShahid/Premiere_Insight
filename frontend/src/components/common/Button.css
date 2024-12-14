@@ -1,0 +1,21 @@
+/* src/styles/Button.css */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  background-color: #3a80e9;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background-color: #3367d6;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
